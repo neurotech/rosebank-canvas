@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var rename = require('gulp-rename');
-var clean = require('gulp-clean');
+var del = require('del');
 
 var assets = {
   stylus: [ 'src/stylus/*.styl' ],
@@ -23,9 +23,11 @@ gulp.task('js', function() {
 });
 
 // Clean
-gulp.task('clean', function() {
-  return gulp.src(['public/css/**', 'public/js/**'], {read: false})
-    .pipe(clean());
+gulp.task('clean', function (cb) {
+  del([
+    'build/css/**',
+    'build/js/**'
+  ], cb);
 });
 
 // Build
