@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var rename = require('gulp-rename');
 var del = require('del');
-var sftp = require('gulp-sftp');
+var awspublish = require('gulp-awspublish');
 
 var config = require('./config');
 var assets = {
@@ -10,7 +10,7 @@ var assets = {
   js: [ 'src/js/*.js' ]
 };
 
-// SASS
+// Stylus
 gulp.task('stylus', function () {
   return gulp.src(assets.stylus)
     .pipe(stylus({ compress: true }))
@@ -39,8 +39,17 @@ gulp.task('build', ['clean'], function() {
 
 // Deploy
 gulp.task('deploy', function () {
+  var publisher = awspublish.create(config.s3);
+
+  // define custom headers
+  var headers = {
+     'Cache-Control': 'max-age=315360000, no-transform, public'
+  };
+
   return gulp.src('build/**')
-    .pipe(sftp(config.deploy));
+    .pipe(publisher.publish(headers))
+    .pipe(publisher.cache())
+    .pipe(awspublish.reporter());
 });
 
 // Watch
