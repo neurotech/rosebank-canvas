@@ -1,0 +1,29 @@
+{
+  "name": "rosebank-canvas",
+  "version": "1.0.0",
+  "description": "Custom CSS and JS includes for Rosebank's Canvas instance.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neurotech/rosebank-canvas"
+  },
+  "keywords": [
+    "css",
+    "js",
+    "canvas",
+    "lms"
+  ],
+  "author": "Tim Douglas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neurotech/rosebank-canvas/issues"
+  },
+  "homepage": "https://github.com/neurotech/rosebank-canvas",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-stylus": "^2.0.1"
+  }
+}
