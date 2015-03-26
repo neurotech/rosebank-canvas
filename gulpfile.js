@@ -2,7 +2,9 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var rename = require('gulp-rename');
 var del = require('del');
+var sftp = require('gulp-sftp');
 
+var config = require('./config');
 var assets = {
   stylus: [ 'src/stylus/*.styl' ],
   js: [ 'src/js/*.js' ]
@@ -33,6 +35,12 @@ gulp.task('clean', function (cb) {
 // Build
 gulp.task('build', ['clean'], function() {
   gulp.start('stylus', 'js');
+});
+
+// Deploy
+gulp.task('deploy', function () {
+  return gulp.src('build/**')
+    .pipe(sftp(config.deploy));
 });
 
 // Watch
