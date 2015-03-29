@@ -1,69 +1,117 @@
-/* 
-///
-///// Canvas Custom CSS
-///////////////////////// 
-/// The CSS below can be use in branding your Canvas application.
-/// You can opt-in to editing these styles by removing the conmment code. 
-/// Please use HTTPS for any URL located in the CSS file to avoid viewing 
-/// browser security warnings. 
-/// Explanations for what each piece does can be found below.
+/*
+  Variables
 */
 
-/* 
-///
-///// Header Bar
-///////////////////////// 
-/// You can use this to replace the color of the header bar
-/// the links to Courses, Grades, & Calendar
-*/
+// Palette
+navy = #003168
+gold = #b4975a
+white = #ffffff
+grey = #555555
 
+goldlinks = #9B7C3C
+goldlinksHover = lighten(goldlinks, 30%)
+navylinks = #2B75C7
+navylinksHover = lighten(navylinks, 30%)
 
 /*
-#header {   
-  background-color: #5b6c79;
-}
-.menu-item .menu-item-title, .menu-item .menu-item-no-drop {
-  color: #ffffff;
-}
+  Global elements
 */
 
-/* 
-///
-///// Logo
-///////////////////////// 
-/// Replace the image url in "background-image" below with the image path you would like to use for your logo
-/// and use "background-size" to correctly fit your logo within the box area 
+a
+  color goldlinks
+  &:hover
+    color goldlinksHover
+
+.btn-primary
+  border-color shade(navy, 20%)
+  background-color tint(navy, 20%)
+  &:hover
+    background-color lighten(navy, 10%)
+/*
+  Header
 */
 
-/*#header-logo, #header.no-user #header-logo {
-  background-image: url("header_logo.png?v1");
-  background-repeat: no-repeat;   
-  background-size: auto 90px;  
-  background-position: 50%;
-  background-color: #ffffff;  
+#header
+  background navy
+  border-bottom 10px solid gold
 
-  width: 175px; 
-  height: 70px;  
-  top: 0;
-  left: 0;  
-}*/
-
-
-/* 
-///
-///// Help Corner Navigation  
-///////////////////////// 
-/// Seen in Top Right Corner (ie, Settings Logout Help )
-/// Replace the background color below with the color you would like to use
+/*
+  Logo
 */
 
-/*#identity {
-  background-color: #31383E;
-}
-#identity a {
-  color: #ffffff;
-}*/
+#header-logo, #header.no-user #header-logo
+  background navy url("https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/svg/crest.svg") no-repeat top left
+  background-size cover
+  width 50px
+  height 60px
+  top 5px
+  bottom 0
 
+/*
+  Menu
+*/
+
+#menu
+  margin-left 85px
+
+// 1 pixel offset course menu dropdown fix
+.menu-item-drop
+  margin-left 1px
+
+#menu_enrollments .customListOpen
+  color goldlinks
+
+.menu-item .menu-item-drop li:hover
+  background-color lighten(gold, 80%)
+
+.menu-item-drop-column-list li:hover .name
+  color shade(goldlinks, 10%)
+
+/*
+  Help Corner Navigation
+*/
+
+#identity
+  background-color gold
+
+#identity a
+  color white
+
+/*
+  Side bar (left)
+*/
+
+.list-view #section-tabs-header
+  color navy
+
+.list-view #section-tabs-header-subtitle
+  display none
+
+.list-view a.active
+  color navylinks
+  font-weight bold
+  &:hover
+    color navylinksHover
+
+.list-view>ul>li>a:hover, .list-view>nav>ul>li>a:hover
+  color shade(grey, 50%)
+
+/*
+  Breadcrumb Trail
+*/
+
+#breadcrumbs
+  padding-top 3px
+
+/*
+  UI
+*/
+
+.ui-tabs .ui-tabs-nav li a
+  color navylinks
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a
+  color navy
 
 /* 
 /// 
