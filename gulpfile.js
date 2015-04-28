@@ -59,7 +59,7 @@ gulp.task('s3', function() {
 });
 
 // Build
-gulp.task('build', ['clean'], function() {
+gulp.task('build', function() {
   gulp.start('stylus', 'js', 'svg');
 });
 
