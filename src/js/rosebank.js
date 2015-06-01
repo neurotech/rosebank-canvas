@@ -10,13 +10,17 @@ function getRandomInt(min, max) {
 }
 
 $(document).ready(function() {
-  // Log the currently logged in user's role data
+  // Testing -- Log the currently logged in user's role data
   console.log('Current role data: ' + ENV.current_user_roles);
 
-  // Top Navigation
-  // --------------
+  /*
+    Top Navigation
+    --------------
+  */
+  // Rename 'Marks' to 'Results & Feedback'
+  $('li#grades_menu_item a').text('Results & Feedback').hide().fadeIn(200);
 
-  // ID 187 = Learning Resources
+  // Course ID 187 = Learning Resources
   if (path[2] === '187') {
     $('head').append('<link rel="stylesheet" href="' + sidebar + '" type="text/css" media="all" />');
   }
@@ -25,14 +29,7 @@ $(document).ready(function() {
   $('<li id="extra_menu_item" class="menu-item"><a href="/courses/187" class="menu-item-no-drop">Learning Resources</a></li>')
     .hide()
     .appendTo('ul#menu')
-    .fadeIn(300);
-
-  // Side Navigation
-  // ---------------
-
-  $('li a.syllabus').text('Course Description');
-  $('li a.assignments').text('Tasks');
-  $('li a.grades').text('Results & Feedback');
+    .fadeIn(200);
 
   /*
     Language Changes
@@ -40,12 +37,18 @@ $(document).ready(function() {
   */
 
   /*
+    Side Navigation
+    ---------------
+  */
+  $('li a.syllabus').text('Course Description');
+  $('li a.assignments').text('Tasks');
+  $('li a.grades').text('Results & Feedback');
+
+  /*
     [1] 'Marks'/'Grades' becomes 'Results & Feedback'
     -------------------------------------------------
   */
-
   $('nav#breadcrumbs ul li a[href*="/grades"]').first().text('Results & Feedback');
-  $('li#grades_menu_item a').text('Results & Feedback');
   $('table td.percent span').text('no results');
   $('a.print-grades').text('Print results');
 
@@ -78,10 +81,10 @@ $(document).ready(function() {
     [2] 'Assignments' becomes 'Tasks'
     ---------------------------------
   */
-
   $('nav#breadcrumbs ul li span:contains("Assignments")').text('Tasks');
 
   if (path[3] === 'assignments') {
+    // Wait between 1 and 2 seconds for /assignments DOM weirdness
     setTimeout(function() {
       $('input[placeholder="Search for Assignment"]').attr('placeholder', 'Search for Task').attr('aria-label', 'Search for Task');
       $('a#addGroup').attr('title', 'Add Task Group').attr('aria-label', 'Add Task Group');
@@ -98,7 +101,6 @@ $(document).ready(function() {
     [3] 'Syllabus' becomes 'Course Description'
     -------------------------------------------
   */
-
   $('nav#breadcrumbs ul li span:contains("Syllabus")').text('Course Description');
 
   if (path[4] === 'syllabus') {
@@ -107,4 +109,11 @@ $(document).ready(function() {
     $('label[for="course_syllabus_body"').hide();
     $('button:contains("Update Syllabus")').text('Update');
   }
+
+  /*
+    Footer Replacement
+    ------------------
+    TBD
+  */
+  $('footer').html('<span id="footer-links"><a href="http://help.instructure.com/" data-track-category="help system" data-track-label="help button" class="support_url help_dialog_trigger">Help</a></span>');
 });
