@@ -42,7 +42,7 @@ a
   padding-top 39px
 
 #header-logo, #header.no-user #header-logo
-  background url("https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/svg/rex.svg") no-repeat center center
+  background url("https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/svg/rex_navbar.svg") no-repeat center center
   background-size cover
   width 70px
   height 70px
@@ -119,26 +119,45 @@ a
   Login Component
 */
 
+body.modal #modal-box.login-box
+  background navy !important
+  box-shadow none
+  width 560px 
+
 #modal-box.login-box
   background navy !important
 
 body.modal #modal-box
   box-shadow none
 
+body.modal #modal-box.login-box h1
+  background url("https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/svg/rex_login.svg") no-repeat center center
+  background-size cover
+  width 220px
+  height 160px
+  margin 10px 0 35px 10px
+
 body.webkit #modal-box.login-box input.text
-  margin 0 8px 0 0
-  padding 9px
-  border none
-  border-radius 4px
+  border 6px solid navy
   box-shadow none
-  background-clip padding-box
-  width 197px
+  font-size 16px
+  font-weight bold
+  color navy
 
-body.modal #modal-box .button, body.modal #login-box .button
-  background-color #0099e0 !important
-  border-color #0076ad !important
+body.modal #modal-box .btn, body.modal #login-box .btn
+  margin 2px 12px 0 0
+  background logoGold
+  font-weight bold
+  &:hover
+   background-color lighten(logoGold, 25%)
 
-/*#login_form .btn-primary, #login_form .btn-primary:hover {
-  background-color: #0099e0;
-  border-color: #0076ad;
-}*/
+.login-options
+  margin-left 12px
+
+#login_form .login-options label
+  color logoGold !important
+
+body.modal #modal-box.login-box a
+  color logoGold !important
+  font-weight bold
+
