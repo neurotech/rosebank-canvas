@@ -32,7 +32,7 @@ Builds assets found in `./src/` to `./build/`
 
 **`npm run sync`**
 
-Copies assets found in `./build/` to your S3 bucket.
+Uploads assets found in `./build/` to your S3 bucket.
 
 ### deploy
 
