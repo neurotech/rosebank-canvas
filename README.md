@@ -38,4 +38,4 @@ Uploads assets found in `./build/` to your S3 bucket.
 
 **`npm run deploy`**
 
-Executes the previous steps in sequential order.
+Executes the `build` and `sync` scripts in sequential order.
