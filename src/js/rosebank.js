@@ -2,7 +2,7 @@
 var path = window.location.pathname.split('/');
 
 // URL to custom CSS file for hiding the sidebar
-var sidebar = 'https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/css/sidebar.min.css';
+var sidebar = 'https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/css/sidebar.css';
 
 // @return [integer] a random int between min and max
 function getRandomInt(min, max) {
@@ -11,7 +11,7 @@ function getRandomInt(min, max) {
 
 $(document).ready(function() {
   // Testing -- Log the currently logged in user's role data
-  console.log('Current role data: ' + ENV.current_user_roles);
+  console.log('Roles: ' + ENV.current_user_roles);
 
   /*
     Top Navigation
@@ -111,9 +111,8 @@ $(document).ready(function() {
   }
 
   /*
-    Footer Replacement
+    [4] Footer Replacement
     ------------------
-    TBD
   */
   $('footer').html('<span id="footer-links"><a href="http://help.instructure.com/" data-track-category="help system" data-track-label="help button" class="support_url help_dialog_trigger">Help</a></span>');
 });
