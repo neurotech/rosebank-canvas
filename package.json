@@ -4,7 +4,10 @@
   "description": "Custom CSS and JS includes for Rosebank's Canvas instance.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --watch src build.js",
+    "build": "node build.js",
+    "sync": "node deploy.js",
+    "deploy": "node build.js && node deploy.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +26,17 @@
   },
   "homepage": "https://github.com/neurotech/rosebank-canvas",
   "dependencies": {
-    "del": "^1.1.1",
-    "gulp": "^3.8.11",
-    "gulp-awspublish": "^1.0.6",
-    "gulp-rename": "^1.2.2",
-    "gulp-sftp": "^0.1.4",
-    "gulp-stylus": "^2.0.1"
+    "autoprefixer-stylus": "0.8.0",
+    "chalk": "1.1.1",
+    "cpr": "0.4.3",
+    "jade": "1.11.0",
+    "mkdirp": "0.5.1",
+    "s3": "4.4.0",
+    "stylus": "0.52.4",
+    "stylus-renderer": "1.1.0",
+    "uglify-js": "2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.8.0"
   }
 }
