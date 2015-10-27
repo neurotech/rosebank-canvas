@@ -2,7 +2,8 @@
   "name": "rosebank-canvas",
   "version": "1.0.0",
   "description": "Custom CSS and JS includes for Rosebank's Canvas instance.",
-  "main": "app.js",
+  "main": "build.js",
+  "private": true,
   "scripts": {
     "dev": "nodemon --watch src build.js",
     "build": "node build.js",
