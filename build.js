@@ -29,12 +29,19 @@ mkdirp.sync('./build/css');
 mkdirp.sync('./build/svg');
 
 // Compile Jade
-var html = jade.renderFile('./src/jade/footer.jade', jadeOptions);
-fs.writeFile('./build/html/footer.html', html, function (err) {
+var footer = jade.renderFile('./src/jade/footer.jade', jadeOptions);
+fs.writeFile('./build/html/footer.html', footer, function (err) {
   if (err) {
     throw err;
   }
-  console.log(chalk.green('[HTML]   Rendered jade files to ./build/html/'));
+  console.log(chalk.green('[HTML]   Rendered footer.html to ./build/html/'));
+});
+var calendar = jade.renderFile('./src/jade/calendar.jade', jadeOptions);
+fs.writeFile('./build/html/calendar.html', calendar, function (err) {
+  if (err) {
+    throw err;
+  }
+  console.log(chalk.green('[HTML]   Rendered calendar.html to ./build/html/'));
 });
 
 // Compile Stylus
@@ -57,7 +64,7 @@ fs.writeFile('./build/js/rosebank.js', js.code, function (err) {
 // Copy SVG
 cpr('./src/svg', './build/svg', {
   deleteFirst: false,
-  overwrite: false,
+  overwrite: true,
   confirm: true,
   filter: /.*\.DS_Store/
 }, function(err) {

@@ -1,8 +1,14 @@
 // Grab the course ID portion of the current URL
 var path = window.location.pathname.split('/');
 
+// Base S3 URL
+var url = 'https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/'
+
+// Rosebank Calendar HTML
+var calendar = '<h4 class="rosebank-calendar">Rosebank Calendar</h4><div id="rbc-calendar"><iframe src="https://www.google.com/calendar/hosted/rosebank.nsw.edu.au/embed?showTitle=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=rosebank.nsw.edu.au_7mc9b1ovepoeii25mh3pu3o8l8%40group.calendar.google.com&amp;color=%23528800&amp;src=rosebank.nsw.edu.au_cmf27oe74ggbe5fbdg8tf1a2l8%40group.calendar.google.com&amp;color=%232952A3&amp;src=rosebank.nsw.edu.au_b5ovt22501ffgv3igt9fltlik8%40group.calendar.google.com&amp;color=%23A32929&amp;src=rosebank.nsw.edu.au_5v3pg9qftun8shnl0h4iks94sg%40group.calendar.google.com&amp;color=%23BE6D00&amp;src=rosebank.nsw.edu.au_m4liq2rg04r8j5oq2b1uogdod8%40group.calendar.google.com&amp;color=%235229A3&amp;src=rosebank.nsw.edu.au_9viv52i6ti61f8op1ue98il0no%40group.calendar.google.com&amp;color=%23B1365F&amp;src=rosebank.nsw.edu.au_dm7hnfds2v5s7vnn6ahmuuh3bg%40group.calendar.google.com&amp;color=%23333333&amp;src=rosebank.nsw.edu.au_cc90g5ecu04nj2195ua0hemqok%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=Australia%2FSydney" style="border-width:0;" width="100%" height="300" frameborder="0" scrolling="no"></iframe></div>';
+
 // URL to custom CSS file for hiding the sidebar
-var sidebar = 'https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/css/sidebar.css';
+var sidebar = url + 'css/sidebar.css';
 
 // @return [integer] a random int between min and max
 function getRandomInt(min, max) {
@@ -30,6 +36,9 @@ $(document).ready(function() {
     .hide()
     .appendTo('ul#menu')
     .fadeIn(200);
+
+  // Add Rosebank Calendar to Homepage
+  $('#dashboard').append(calendar);
 
   /*
     Language Changes
