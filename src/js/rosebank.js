@@ -16,16 +16,19 @@ function getRandomInt(min, max) {
 }
 
 $(document).ready(function() {
-  // Testing -- Log the currently logged in user's role data
-  console.log('Roles: ' + ENV.current_user_roles);
-
+  var roles = ENV.current_user_roles;
+ 
   /*
-    Top Navigation
-    --------------
+   Top Navigation
+   --------------
   */
-  // Rename 'Marks' to 'Results & Feedback'
-  $('li#grades_menu_item a').text('Results & Feedback').hide().fadeIn(200);
-
+  // Rename 'Marks' to 'Results & Feedback' or 'Parent Information' depending on user role
+  if ($.inArray('observer', roles) >= 0) {
+    $('li#grades_menu_item a').attr('href', '/courses/413').text('Parent Information').hide().fadeIn(200);
+  } else {
+    $('li#grades_menu_item a').text('Results & Feedback').hide().fadeIn(200);
+  }
+  
   // Course ID 187 = Learning Resources
   if (path[2] === '187') {
     $('head').append('<link rel="stylesheet" href="' + sidebar + '" type="text/css" media="all" />');
@@ -53,6 +56,16 @@ $(document).ready(function() {
   $('li a.assignments').text('Tasks');
   $('li a.grades').text('Results & Feedback');
 
+  /*
+   Observer Redirect
+   -----------------
+  */
+  if ($.inArray('observer', roles) >= 0) {
+    if ($.inArray('grades', path) >= 0) {
+      window.location.replace('https://rosebank.instructure.com/');
+    }
+  }
+  
   /*
     [1] 'Marks'/'Grades' becomes 'Results & Feedback'
     -------------------------------------------------
