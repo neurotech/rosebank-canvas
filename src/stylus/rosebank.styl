@@ -1,176 +1,37 @@
 /*
-  Variables
-*/
-
-// Palette
-navy = #003168
-gold = #b4975a
-white = #ffffff
-grey = #555555
-
-goldlinks = #9B7C3C
-goldlinksHover = lighten(goldlinks, 30%)
-navylinks = #2B75C7
-navylinksHover = lighten(navylinks, 30%)
-
-logoNavy = #333399
-logoGold = #CC9933
-
-/*
-  Global elements
-*/
-
-a
-  color goldlinks
-  &:hover
-    color goldlinksHover
-
-#identity .emphasize-name
-  color white
-  font-weight bold
-
-.btn-primary
-  border-color shade(navy, 20%)
-  background-color tint(navy, 20%)
-  &:hover
-    background-color lighten(navy, 10%)
-
-/*
-  Header
-*/
-
-#header
-  background navy
-  border-bottom 10px solid gold
-
-#header-inner
-  padding-top 39px
-
-#header-logo, #header.no-user #header-logo
-  background url("https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/svg/rex_navbar.svg") no-repeat center center
-  background-size cover
-  width 70px
-  height 70px
-  top 6px
-  bottom 0
-
-/*
-  Menu
-*/
-
-#menu
-  margin-left 95px
-
-// 1 pixel offset course menu dropdown fix
-.menu-item-drop
-  margin-left 1px
-
-#menu_enrollments .customListOpen
-  color goldlinks
-
-.menu-item .menu-item-drop li:hover
-  background-color lighten(gold, 80%)
-
-.menu-item-drop-column-list li:hover .name
-  color shade(goldlinks, 10%)
-
-/*
-  Help Corner Navigation
-*/
-
-#identity
-  background-color gold
-
-#identity a
-  color white
-
-/*
-  Side bar (left)
-*/
-
-.list-view #section-tabs-header
-  color navy
-
-.list-view #section-tabs-header-subtitle
-  display none
-
-.list-view a.active
-  color navylinks
-  font-weight bold
-  &:hover
-    color navylinksHover
-
-.list-view>ul>li>a:hover, .list-view>nav>ul>li>a:hover
-  color shade(grey, 50%)
-
-/*
-  Breadcrumb Trail
-*/
-
-#breadcrumbs
-  padding-top 3px
-
-/*
-  UI
-*/
-
-.ui-tabs .ui-tabs-nav li a
-  color navylinks
-
-.ui-tabs .ui-tabs-nav li.ui-tabs-active a
-  color navy
-  
-/*
   Type
 */
+body
+  font-weight 500
 
+.list-view>ul>li>a, .list-view>nav>ul>li>a
+  font-weight 500
+
+.btn, .Button, .ui-button
+  font-weight 400
+
+/*
+  Navigation bar
+*/
+.ic-app-header__logomark
+  width 80%
+  margin 5px auto
+
+/*
+  Rosebank Calendar
+*/
 .rosebank-calendar
-  padding 15px 0 3px 10px
+  padding 15px 0 3px 0
   font-weight bold
 
-/* 
+/*
   Login Component
 */
+.ic-Login__header .ic-Login__header__logo
+  text-align center
 
-body.modal #modal-box.login-box
-  background navy !important
-  box-shadow none
-  width 560px 
+.ic-Login__header .ic-Login__header__logo img
+  max-width 280px
 
-#modal-box.login-box
-  background navy !important
-
-body.modal #modal-box
-  box-shadow none
-
-body.modal #modal-box.login-box h1
-  background url("https://s3-ap-southeast-2.amazonaws.com/rosebank-canvas/svg/rex_login.svg") no-repeat center center
-  background-size cover
-  width 280px
-  height 180px
-  margin 0 0 20px 0
-
-body.webkit #modal-box.login-box input.text
-  border 6px solid navy
-  box-shadow none
-  font-size 16px
-  font-weight bold
-  color navy
-
-body.modal #modal-box .btn, body.modal #login-box .btn
-  margin 2px 12px 0 0
-  background logoGold
-  font-weight bold
-  &:hover
-   background-color lighten(logoGold, 25%)
-
-.login-options
-  margin-left 5px
-
-#login_form .login-options label
-  color logoGold !important
-
-body.modal #modal-box.login-box a
-  color logoGold !important
-  font-weight bold
-
+.ic-Login__actions button.Button--login
+  border 1px solid #042244
