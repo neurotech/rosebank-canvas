@@ -45,7 +45,7 @@ fs.writeFile('./build/html/calendar.html', calendar, function (err) {
 });
 
 // Compile Stylus
-stylus(['rosebank.styl', 'sidebar.styl'], stylusOptions, function (err) {
+stylus(['rosebank.styl'], stylusOptions, function (err) {
   if (err) {
     throw err;
   }
@@ -67,7 +67,7 @@ cpr('./src/svg', './build/svg', {
   overwrite: true,
   confirm: true,
   filter: /.*\.DS_Store/
-}, function(err) {
+}, function (err) {
   if (err) {
     throw err;
   } else {
