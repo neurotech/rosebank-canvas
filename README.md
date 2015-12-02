@@ -6,14 +6,6 @@ cd rosebank-canvas
 npm i
 ```
 
-Ensure you have your environment variables set accordingly:
-
-```
-export ROSEBANK_CANVAS_BUCKET="bucket-name"
-export ROSEBANK_CANVAS_ACCESSKEYID="number"
-export ROSEBANK_CANVAS_SECRETACCESSKEY="secret"
-```
-
 ## Scripts
 
 ### dev
@@ -27,15 +19,3 @@ Uses `nodemon` to watch `./src/` for any changes and re-runs `build.js` accordin
 **`npm run build`**
 
 Builds assets found in `./src/` to `./build/`
-
-### sync
-
-**`npm run sync`**
-
-Uploads assets found in `./build/` to your S3 bucket.
-
-### deploy
-
-**`npm run deploy`**
-
-Executes the `build` and `sync` scripts in sequential order.
