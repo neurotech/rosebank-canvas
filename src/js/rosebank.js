@@ -133,7 +133,7 @@ $(document).ready(function() {
 
   // https://institution.instructure.com/courses/:id/assignments/syllabus
   if (path[4] === 'syllabus') {
-    $('#main h1').text('Course Description');
+    $('#main #content h1').first().text('Course Description');
     $('a.edit_syllabus_link').html('<i class="icon-edit"></i> Edit Course Description');
     $('label[for="course_syllabus_body"').hide();
     $('button:contains("Update Syllabus")').text('Update');
