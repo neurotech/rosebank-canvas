@@ -61,10 +61,16 @@ $(document).ready(function() {
     Language Change: 'Marks'/'Grades' becomes 'Results & Feedback'
     --------------------------------------------------------------
   */
-  // Wait between 1 and 2 seconds for /gradebook DOM weirdness
-  setTimeout(function() {
-    $('#right-side a[href="/grades"].Button').text('View Results & Feedback');
-  }, getRandomInt(1000, 2000));
+
+  // Change the View Grades button's text and show it if the logged-in user is not an observer.
+  if ($.inArray('observer', roles) === -1) {
+    setTimeout(function() {
+      $('#right-side a[href="/grades"].Button')
+        .text('View Results & Feedback')
+        .css('display', 'block')
+    }, getRandomInt(1500, 2500));
+  }
+
   $('nav#breadcrumbs ul li a[href*="/grades"]').first().text('Results & Feedback');
   $('table.course_details.student_grades td.percent').text('no results');
   $('a.print-grades').text('Print results');
