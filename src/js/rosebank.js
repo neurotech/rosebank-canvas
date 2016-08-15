@@ -41,7 +41,7 @@ $(document).ready(function() {
   }, 150);
 
   if (path[2] === '187') {
-    $('#left-side').remove();
+    $('#courseMenuToggle').click();
     $('a#global_nav_courses_link').parent().removeClass('ic-app-header__menu-list-item--active');
     setTimeout(function () {
       $('a#global_nav_learning-resources_link')
@@ -146,6 +146,17 @@ $(document).ready(function() {
     // Justyn will supply replacement language for the line below:
     $('div#course_syllabus_details').html('<p>The Course Description page shows a table-oriented view of the course schedule, and the basics of course grading.  You can add any other comments, notes, or thoughts you have about the course structure, course policies or anything else.</p><p>To add some comments, click the "Edit Course Description" link to the right.</p>');
   }
+
+  /*
+    Dashboard: Header Change
+    --------------------------------------------------------
+  */
+
+  var newDashboardHeader = '<h1 class="dashboardNewHeader">Welcome to the Rosebank Exchange</h1><h2 class="dashboardNewSubtitle">Rosebank College\'s Learning Management System</h2>';
+  $('.ic-Dashboard-header .grid-row .col-xs-9')
+    .hide()
+    .html(newDashboardHeader)
+    .fadeIn(100);
 
   /*
     Footer Removal
