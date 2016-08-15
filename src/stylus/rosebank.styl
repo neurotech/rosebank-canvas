@@ -24,8 +24,35 @@ body
 /*
   Dashboard
 */
-.ic-DashboardCard__header-subtitle
+.dashboardNewHeader
+  margin-top 0
+  margin-bottom 0
+  font-weight 400
+  line-height 1.1
+
+.dashboardNewSubtitle
+  font-size 1.3em
+  line-height 1.1
+  color #808080
+
+.ic-DashboardCard__header_hero
+  height 66px
+
+.ic-DashboardCard__header_content
+  padding 15px
+  height 50px
+  border-left 1px solid #d2d2d2
+  border-right 1px solid #d2d2d2
+
+.ic-DashboardCard__link
+  font-size 1.1em
+
+.ic-DashboardCard__header-subtitle, .ic-DashboardCard__header-term
   display none
+
+.ic-DashboardCard__action-container
+  border-left 1px solid #d2d2d2
+  border-right 1px solid #d2d2d2
 
 .rosebank-calendar
   padding 15px 0 3px 0
@@ -34,13 +61,22 @@ body
 #right-side a[href="/grades"]
   display none
 
+// .ic-sidebar-logo
+//   margin 30px 0 0 0
+
+.ic-sidebar-logo__image
+  max-height 88px
+
 /*
   Login Component
 */
-.ic-Login__header .ic-Login__header__logo
+.ic-Login-header .ic-Login-header__logo
   text-align center
+  -webkit-flex 0 0 100%
+  -ms-flex 0 0 100%
+  flex 0 0 100%
 
-.ic-Login__header .ic-Login__header__logo img
+.ic-Login-header .ic-Login-header__logo img
   max-width 280px
 
 .ic-Login__actions button.Button--login
