@@ -9,14 +9,11 @@ var stylus = require('stylus-renderer');
 var autoprefixer = require('autoprefixer-stylus');
 var UglifyJS = require('uglify-js');
 
-var jadeOptions = {
-  pretty: true
-};
-
+var jadeOptions = { pretty: true };
 var stylusOptions = {
   src: './src/stylus/',
   dest: './build/css/',
-  use: autoprefixer({browsers: 'last 2 versions'}),
+  use: autoprefixer({ browsers: 'last 2 versions' }),
   stylusOptions: { compress: 'true' }
 };
 
@@ -31,33 +28,25 @@ mkdirp.sync('./build/svg');
 // Compile Jade
 var footer = jade.renderFile('./src/jade/footer.jade', jadeOptions);
 fs.writeFile('./build/html/footer.html', footer, function (err) {
-  if (err) {
-    throw err;
-  }
+  if (err) { throw err; }
   console.log(chalk.green('[HTML]   Rendered footer.html to ./build/html/'));
 });
 var calendar = jade.renderFile('./src/jade/calendar.jade', jadeOptions);
 fs.writeFile('./build/html/calendar.html', calendar, function (err) {
-  if (err) {
-    throw err;
-  }
+  if (err) { throw err; }
   console.log(chalk.green('[HTML]   Rendered calendar.html to ./build/html/'));
 });
 
 // Compile Stylus
 stylus(['rosebank.styl'], stylusOptions, function (err) {
-  if (err) {
-    throw err;
-  }
+  if (err) { throw err; }
   console.log(chalk.blue('[CSS]    Rendered stylus files to ./build/css/'));
 });
 
 // Minify JS
 var js = UglifyJS.minify('./src/js/rosebank.js');
 fs.writeFile('./build/js/rosebank.js', js.code, function (err) {
-  if (err) {
-    throw err;
-  }
+  if (err) { throw err; }
   console.log(chalk.red('[JS]     Minified js files to ./build/js/'));
 });
 
@@ -68,9 +57,7 @@ cpr('./src/svg', './build/svg', {
   confirm: true,
   filter: /.*\.DS_Store/
 }, function (err) {
-  if (err) {
-    throw err;
-  } else {
+  if (err) { throw err; } else {
     console.log(chalk.magenta('[SVG]    Copied svg files to ./build/svg/'));
   }
 });
