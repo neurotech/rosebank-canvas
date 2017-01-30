@@ -29,6 +29,16 @@ $(document).ready(function() {
   }
 
   /*
+   Observer - Hide Recent Feedback
+   -------------------------------
+  */
+  if ($.inArray('observer', roles) >= 0) {
+    setTimeout(function () {
+      $('#right-side .recent_feedback').remove();
+    }, 1100);
+  }
+
+  /*
     'Learning Resources' Navigation Bar Element
     -------------------------------------------
   */
