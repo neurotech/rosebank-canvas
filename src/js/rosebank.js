@@ -50,16 +50,6 @@ $(document).ready(function() {
       .fadeIn(100);
   }, 150);
 
-  if (path[2] === '187') {
-    $('#courseMenuToggle').click();
-    $('a#global_nav_courses_link').parent().removeClass('ic-app-header__menu-list-item--active');
-    setTimeout(function () {
-      $('a#global_nav_learning-resources_link')
-        .parent()
-        .addClass('ic-app-header__menu-list-item--active');
-    }, 250);
-  }
-
   /*
     Language Changes: Side Navigation items
   */
